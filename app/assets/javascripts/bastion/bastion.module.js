@@ -119,14 +119,15 @@ angular.module('Bastion').config(
  * @requires currentLocale
  * @requires $location
  * @requires $window
+ * @requires $document
  * @requires PageTitle
  * @requires markActiveMenu
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu) {
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', '$document', 'PageTitle', 'markActiveMenu',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, $document, PageTitle, markActiveMenu) {
         var fromState, fromParams, orgSwitcherRegex;
 
         $rootScope.$state = $state;
@@ -197,5 +198,12 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
                 $window.location.href = newUrl;
             }
         });
+
+        // Disable turbolinks
+        $document.find('body').attr('data-no-turbolink', true);
+
+        if ($window.Turbolinks) {
+            $window.Turbolinks.pagesCached(0);
+        }
     }
 ]);
