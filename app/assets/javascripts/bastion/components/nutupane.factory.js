@@ -69,10 +69,14 @@ angular.module('Bastion.components').factory('Nutupane',
 
                 replace = replace || false;
 
+                console.log("load");
+                console.log(table.initialLoad);
+
                 if (table.initialLoad) {
                     table.working = true;
                 }
-
+                console.log(table.working);
+                
                 params.page = table.resource.page + 1;
                 params.search = table.searchTerm || "";
                 params.search = self.searchTransform(params.search);
@@ -259,6 +263,7 @@ angular.module('Bastion.components').factory('Nutupane',
                 self.table.selectAllResults(false);
 
                 if (!self.table.working) {
+                    console.log("search");
                     self.table.working = true;
                     self.query();
                 }
