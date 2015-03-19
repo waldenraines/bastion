@@ -52,11 +52,6 @@
   </div>
 
   <div class="row nutupane" bst-table="table" nutupane-table ng-class="{'table-reduced': $root.$state.current.collapsed}">
-    <div class="loading-mask" ng-show="table.working" ng-class="{ 'loading-mask-collapsed': $root.$state.current.collapsed }">
-      <i class="fa fa-spinner fa-spin"></i>
-      <span ng-hide="$root.$state.current.collapsed">{{ "Loading..." | translate }}</span>
-    </div>
-
     <div bst-container-scroll bst-infinite-scroll="table.nextPage()" data="table.rows">
       <div ui-view="table"></div>
     </div>
