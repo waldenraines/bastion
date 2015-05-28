@@ -53,7 +53,7 @@ angular.module('Bastion.components').directive('bstInfiniteScroll', ['$window', 
 
                 if (getScrollHeight() < $element.height()) {
                     loadResult = $scope.loadMoreFunction();
-                    if (isPromise(loadResult) && loadResult.$resolved) {
+                    if (isPromise(loadResult)) {
                         loadResult.then(function () {
                             if (getScrollHeight() < $element.height()) {
                                 loadUntilScroll();
@@ -63,13 +63,17 @@ angular.module('Bastion.components').directive('bstInfiniteScroll', ['$window', 
                 }
             };
 
-            angular.element($window).bind('resize', loadUntilScroll);
-
             if (!$scope.skipInitialLoad && (angular.isUndefined($scope.data) || $scope.data.length === 0)) {
                 result = $scope.loadMoreFunction();
+
                 if (isPromise(result)) {
-                    result.then(loadUntilScroll);
+                    result.then(function () {
+                        angular.element($window).bind('resize', loadUntilScroll);
+                        loadUntilScroll();
+                    });
                 }
+            } else {
+                angular.element($window).bind('resize', loadUntilScroll);
             }
         }
     };
