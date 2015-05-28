@@ -23,7 +23,7 @@ angular.module('Bastion.components').directive('bstInfiniteScroll', ['$window', 
         scope: {
             data: '=',
             loadMoreFunction: '&bstInfiniteScroll',
-            initialLoad: '='
+            skipInitialLoad: '='
         },
         controller: function ($scope, $element) {
 
@@ -59,16 +59,14 @@ angular.module('Bastion.components').directive('bstInfiniteScroll', ['$window', 
                             if (getScrollHeight() < $element.height()) {
                                 loadUntilScroll();
                             }
-
-                            if ($scope.initialLoad) {
-                                angular.element($window).bind('resize', loadUntilScroll);
-                            }
                         });
                     }
                 }
             };
 
-            if ($scope.initialLoad && (angular.isUndefined($scope.data) || $scope.data.length === 0)) {
+            angular.element($window).bind('resize', loadUntilScroll);
+
+            if (!$scope.skipInitialLoad && (angular.isUndefined($scope.data) || $scope.data.length === 0)) {
                 loadUntilScroll();
             }
         }
