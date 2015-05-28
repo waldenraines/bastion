@@ -57,7 +57,7 @@
     </div>
 
     <div bst-container-scroll bst-infinite-scroll="detailsTable.nextPage()"
-         data="detailsTable.rows" skip-initial-load="!detailsTable.initialLoad">
+         data="detailsTable.rows" initial-load="detailsTable.initialLoad">
 
       <div class="nutupane-select-all" ng-show="detailsTable.selectAllResultsEnabled && detailsTable.allSelected() && !detailsTable.allResultsSelected">
         <span translate>All {{ detailsTable.rows.length }} items on this page are selected.</span>
