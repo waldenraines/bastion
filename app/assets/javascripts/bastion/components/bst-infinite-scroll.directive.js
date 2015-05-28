@@ -53,7 +53,7 @@ angular.module('Bastion.components').directive('bstInfiniteScroll', ['$window', 
 
                 if (getScrollHeight() < $element.height()) {
                     loadResult = $scope.loadMoreFunction();
-                    if (isPromise(loadResult)) {
+                    if (isPromise(loadResult) && loadResult.$resolved) {
                         loadResult.then(function () {
                             if (getScrollHeight() < $element.height()) {
                                 loadUntilScroll();
