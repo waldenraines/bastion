@@ -86,7 +86,7 @@
       "javascripts/bastion/ngInfiniteScroll": "build/ng-infinite-scroll.js"
     },
     "bootstrap": {
-      "stylesheets/bastion/bootstrap": "less/*.less",
+      "stylesheets/bastion/bootstrap/": "less/",
       "fonts/bastion/bootstrap": "dist/fonts/*"
     },
     "font-awesome": {
