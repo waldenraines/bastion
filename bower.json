@@ -18,8 +18,8 @@
     "underscore": "=1.5.2",
     "ngInfiniteScroll": "1.2.1",
     "ngUpload": "~0.5.5",
-    "bootstrap": "~3.1.1",
-    "font-awesome": "4.2.0",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "4.3.0",
     "angular-animate": "=1.2.0",
     "angular-uuid4": "0.1.0",
     "patternfly": "2.2.0"
@@ -86,7 +86,7 @@
       "javascripts/bastion/ngInfiniteScroll": "build/ng-infinite-scroll.js"
     },
     "bootstrap": {
-      "stylesheets/bastion/bootstrap/less": "less/*.less",
+      "stylesheets/bastion/bootstrap": "less/*.less",
       "fonts/bastion/bootstrap": "dist/fonts/*"
     },
     "font-awesome": {
