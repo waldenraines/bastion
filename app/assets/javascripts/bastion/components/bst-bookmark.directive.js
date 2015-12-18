@@ -15,12 +15,10 @@ angular.module('Bastion.components').directive('bstBookmark', ['BstBookmark', fu
             $scope.newBookmark = {};
 
             $scope.load = function () {
-                BstBookmark.queryPaged({search: 'controller=' + $scope.controllerName}).$promise.then(function (response) {
+                BstBookmark.queryPaged({search: 'controller=' + $scope.controllerName}, function (response) {
                     $scope.bookmarks = response.results;
                 });
             };
-
-            $scope.bookmarks = $scope.load();
 
             $scope.add = function () {
                 if (angular.isDefined($scope.query)) {
@@ -30,23 +28,32 @@ angular.module('Bastion.components').directive('bstBookmark', ['BstBookmark', fu
             };
 
             $scope.save = function () {
-                BstBookmark.create({
-                                     name: $scope.newBookmark.name,
-                                     query: $scope.newBookmark.query,
-                                     public: $scope.newBookmark.public,
-                                     controller: $scope.controllerName
-                                   }
-                ).$promise.then(function successCallback() {
+                var params, success, error;
+
+                params = {
+                    name: $scope.newBookmark.name,
+                    query: $scope.newBookmark.query,
+                    public: $scope.newBookmark.public,
+                    controller: $scope.controllerName
+                };
+
+                success = function () {
                     $scope.bookmarks = $scope.load();
                     $scope.$parent.successMessages = [translate('Bookmark was successfully created.')];
-                }, function errorCallback(response) {
-                    $scope.$parent.errorMessages = response.data.error.full_messages;
-                });
+                };
+
+                error = function (response) {
+                    $scope.$parent.errorMessages = [response.data.error.full_messages];
+                };
+
+                BstBookmark.create(params, success, error);
             };
 
-            $scope.get = function (bookmark) {
+            $scope.setQuery = function (bookmark) {
                 $scope.query = bookmark.query;
             };
+
+            $scope.load();
         }]
     };
 }]);
