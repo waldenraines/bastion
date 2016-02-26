@@ -28,6 +28,7 @@ angular.module('Bastion.components')
             $scope.editMode = false;
             $scope.workingMode = true;
 
+            console.log(action);
             if (angular.isDefined(action) && action.hasOwnProperty('then')) {
                 action.then(
                     function () {
@@ -82,6 +83,7 @@ angular.module('Bastion.components')
         };
 
         $scope.save = function () {
+            console.log($scope.handleSave);
             var action = $scope.handleSave({ value: $scope.model });
 
             if ($scope.editTrigger) {
