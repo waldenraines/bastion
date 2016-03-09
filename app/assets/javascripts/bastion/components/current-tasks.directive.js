@@ -38,6 +38,8 @@ angular.module('Bastion.components').directive('currentTasks',
                 };
 
                 $document.bind('click', function (event) {
+                    console.log(event);
+                    console.log(event.which);
                     var target = angular.element(event.target);
                     if (!currentTasksMenu.find(target).length) {
                         $scope.visible = false;
