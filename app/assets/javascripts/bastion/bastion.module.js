@@ -57,19 +57,6 @@ angular.module('Bastion').config(
             }
         });
 
-        $urlRouterProvider.otherwise(function ($injector, $location) {
-            var $window = $injector.get('$window'),
-                url = $location.absUrl();
-
-            // ensure we don't double encode +s
-            url = url.replace(/%2B/g, "+");
-
-            // Remove the old browser path if present
-            url = url.replace(oldBrowserBastionPath, '');
-
-            $window.location.href = url;
-        });
-
         $locationProvider.html5Mode(true);
 
         $provide.factory('PrefixInterceptor', ['$q', '$templateCache', function ($q, $templateCache) {
@@ -163,6 +150,7 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
 
         $rootScope.$on('$stateChangeSuccess',
             function (event, toState, toParams, fromStateIn, fromParamsIn) {
+
                 //restore all query string parameters back to $location.search
                 if (this.locationSearch) {
                     $location.search('search', this.locationSearch);
@@ -184,13 +172,24 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
             }
         );
 
-        // Prevent angular from handling org/location switcher URLs
-        orgSwitcherRegex = new RegExp("/(organizations|locations)/(.+/)*(select|clear)");
+        // Should be able to replace this with $stateNotFound when a version of ui-router that
+        // contains it is released, see https://github.com/angular-ui/ui-router/wiki#state-change-events
         $rootScope.$on('$locationChangeStart', function (event, newUrl) {
-            if (newUrl.match(orgSwitcherRegex)) {
-                event.preventDefault();
-                $window.location.href = newUrl;
-            }
+            var oldBrowserBastionPath = '/bastion#';
+
+            var states = $state.$get();
+
+            console.log("$locationChangeStart");
+            die();
+            angular.forEach(states, function (state) {
+                console.log(state.href(state.name));
+                console.log(state.href());
+            });
+
+            // Remove the old browser path if present
+            newUrl = newUrl(oldBrowserBastionPath, '');
+            event.preventDefault();
+            $window.location.href = newUrl;
         });
     }
 ]);
