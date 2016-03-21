@@ -14,6 +14,15 @@ angular.module('Bastion', [
 ]);
 
 /**
+ * @ngdoc constant
+ * @name Bastion.oldBrowserPath
+ *
+ * @description
+ *   A path used for browsers that don't support push state.
+ */
+angular.module('Bastion').constant('oldBrowserPath', '/bastion#');
+
+/**
  * @ngdoc config
  * @name  Bastion.config
  *
@@ -22,15 +31,15 @@ angular.module('Bastion', [
  * @requires $locationProvider
  * @requires $provide
  * @requires BastionConfig
+ * @requries oldBrowserPath
  *
  * @description
  *   Used for establishing application wide configuration such as adding the Rails CSRF token
  *   to every request and adding Xs to translated strings.
  */
 angular.module('Bastion').config(
-    ['$httpProvider', '$urlRouterProvider', '$locationProvider', '$provide', 'BastionConfig',
-    function ($httpProvider, $urlRouterProvider, $locationProvider, $provide, BastionConfig) {
-        var oldBrowserBastionPath = '/bastion#';
+    ['$httpProvider', '$urlRouterProvider', '$locationProvider', '$provide', 'BastionConfig', 'oldBrowserPath',
+    function ($httpProvider, $urlRouterProvider, $locationProvider, $provide, BastionConfig, oldBrowserPath) {
 
         $httpProvider.defaults.headers.common = {
             Accept: 'application/json, text/plain, version=2; */*',
@@ -43,7 +52,7 @@ angular.module('Bastion').config(
                 path = $location.path();
 
             if (!$sniffer.history) {
-                $window.location.href = oldBrowserBastionPath + $location.path();
+                $window.location.href = oldBrowserPath + $location.path();
             }
 
             if (/^\/katello($|\/)/.test(path)) {
@@ -94,6 +103,7 @@ angular.module('Bastion').config(
  * @ngdoc run
  * @name Bastion.run
  *
+ * @requires _
  * @requires $rootScope
  * @requires $state
  * @requires $stateParams
@@ -103,13 +113,18 @@ angular.module('Bastion').config(
  * @requires $window
  * @requires PageTitle
  * @requires markActiveMenu
+ * @requires oldBrowserPath
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu) {
-        var fromState, fromParams, orgSwitcherRegex;
+angular.module('Bastion').run(['_', '$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'oldBrowserPath',
+    function (_, $rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, oldBrowserPath) {
+        var fromState, fromParams, validStateUrls = [];
+
+        angular.forEach($state.get(), function (state) {
+            validStateUrls.push($state.href($state.get(state)));
+        });
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -175,21 +190,17 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
         // Should be able to replace this with $stateNotFound when a version of ui-router that
         // contains it is released, see https://github.com/angular-ui/ui-router/wiki#state-change-events
         $rootScope.$on('$locationChangeStart', function (event, newUrl) {
-            var oldBrowserBastionPath = '/bastion#';
+            console.log(validStateUrls);
+            var urlWithoutIds = newUrl.replace(/\/[0-9]+/g, '/');
 
-            var states = $state.$get();
+            console.log(urlWithoutIds);
 
-            console.log("$locationChangeStart");
-            die();
-            angular.forEach(states, function (state) {
-                console.log(state.href(state.name));
-                console.log(state.href());
-            });
-
-            // Remove the old browser path if present
-            newUrl = newUrl(oldBrowserBastionPath, '');
-            event.preventDefault();
-            $window.location.href = newUrl;
+            if (_.contains(validStateUrls, urlWithoutIds)) {
+                // Remove the old browser path if present
+                newUrl = newUrl.replace(oldBrowserPath, '');
+                event.preventDefault();
+                $window.location.href = newUrl;
+            }
         });
     }
 ]);
