@@ -8,6 +8,7 @@
  */
 angular.module('Bastion', [
     'ui.router',
+    'ui.router.util',
     'ngResource',
     'Bastion.i18n',
     'Bastion.components'
