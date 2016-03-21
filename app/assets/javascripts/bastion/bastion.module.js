@@ -103,7 +103,6 @@ angular.module('Bastion').config(
  * @ngdoc run
  * @name Bastion.run
  *
- * @requires _
  * @requires $rootScope
  * @requires $state
  * @requires $stateParams
@@ -118,8 +117,8 @@ angular.module('Bastion').config(
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['_', '$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'oldBrowserPath',
-    function (_, $rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, oldBrowserPath) {
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'oldBrowserPath',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, oldBrowserPath) {
         var fromState, fromParams, validStateUrls = [];
 
         angular.forEach($state.get(), function (state) {
