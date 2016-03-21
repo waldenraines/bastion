@@ -14,15 +14,6 @@ angular.module('Bastion', [
 ]);
 
 /**
- * @ngdoc constant
- * @name Bastion.oldBrowserPath
- *
- * @description
- *   A path used for browsers that don't support push state.
- */
-angular.module('Bastion').constant('oldBrowserPath', '/bastion#');
-
-/**
  * @ngdoc config
  * @name  Bastion.config
  *
@@ -31,15 +22,15 @@ angular.module('Bastion').constant('oldBrowserPath', '/bastion#');
  * @requires $locationProvider
  * @requires $provide
  * @requires BastionConfig
- * @requries oldBrowserPath
  *
  * @description
  *   Used for establishing application wide configuration such as adding the Rails CSRF token
  *   to every request and adding Xs to translated strings.
  */
 angular.module('Bastion').config(
-    ['$httpProvider', '$urlRouterProvider', '$locationProvider', '$provide', 'BastionConfig', 'oldBrowserPath',
-    function ($httpProvider, $urlRouterProvider, $locationProvider, $provide, BastionConfig, oldBrowserPath) {
+    ['$httpProvider', '$urlRouterProvider', '$locationProvider', '$provide', 'BastionConfig',
+    function ($httpProvider, $urlRouterProvider, $locationProvider, $provide, BastionConfig) {
+        var oldBrowserBastionPath = '/bastion#';
 
         $httpProvider.defaults.headers.common = {
             Accept: 'application/json, text/plain, version=2; */*',
@@ -52,7 +43,7 @@ angular.module('Bastion').config(
                 path = $location.path();
 
             if (!$sniffer.history) {
-                $window.location.href = oldBrowserPath + $location.path();
+                $window.location.href = oldBrowserBastionPath + $location.path();
             }
 
             if (/^\/katello($|\/)/.test(path)) {
@@ -64,6 +55,14 @@ angular.module('Bastion').config(
             if (path[path.length - 1] === '/') {
                 return path.slice(0, -1);
             }
+        });
+
+        $urlRouterProvider.otherwise(function ($injector, $location) {
+            var $window = $injector.get('$window');
+                //decodedURL = $window.decodeURIComponent($location.url());
+
+            console.log($window.location.href);
+            //$window.location.href = decodedURL.replace(oldBrowserBastionPath, '');
         });
 
         $locationProvider.html5Mode(true);
@@ -113,13 +112,12 @@ angular.module('Bastion').config(
  * @requires PageTitle
  * @requires markActiveMenu
  * @requires $urlRouter
- * @requires oldBrowserPath
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', '$urlRouter', 'oldBrowserPath',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, $urlRouter, oldBrowserPath) {
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu) {
         var fromState, fromParams;
 
         $rootScope.$state = $state;
@@ -182,34 +180,5 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
                 markActiveMenu();
             }
         );
-
-        // Should be able to replace this with $stateNotFound when a version of ui-router that
-        // contains it is released, see https://github.com/angular-ui/ui-router/wiki#state-change-events
-        //$rootScope.$on('$locationChangeStart', function (event, newUrl) {
-        //    var nextState, urlWithoutIds = newUrl.replace(/\/[0-9]+/g, '/');
-        //
-        //    //nextState = _.find($state.get(), function (state) {
-        //    //    var found = false, stateUrl = $state.href($state.get(state));
-        //    //
-        //    //    console.log(stateUrl);
-        //    //    if (urlWithoutIds.indexOf(stateUrl) > -1) {
-        //    //        found = true;
-        //    //    }
-        //    //
-        //    //    return found;
-        //    //});
-        //
-        //    //if (nextState === undefined) {
-        //    //    console.log("not in bastion urls!")
-        //    //
-        //    //    // Remove the old browser path if present
-        //    //    newUrl = newUrl.replace(oldBrowserPath, '');
-        //    //    //event.preventDefault();
-        //    //    //$window.location.href = newUrl;
-        //    //}
-        //
-        //    console.log(event);
-        //    console.log($urlRouter.href(newUrl));
-        //});
     }
 ]);
