@@ -112,18 +112,15 @@ angular.module('Bastion').config(
  * @requires $window
  * @requires PageTitle
  * @requires markActiveMenu
+ * @requires UrlMatcher
  * @requires oldBrowserPath
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'oldBrowserPath',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, oldBrowserPath) {
-        var fromState, fromParams, validStateUrls = [];
-
-        angular.forEach($state.get(), function (state) {
-            validStateUrls.push($state.href($state.get(state)));
-        });
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'UrlMatcher', 'oldBrowserPath',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, UrlMatcher, oldBrowserPath) {
+        var fromState, fromParams;
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -189,18 +186,29 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
         // Should be able to replace this with $stateNotFound when a version of ui-router that
         // contains it is released, see https://github.com/angular-ui/ui-router/wiki#state-change-events
         $rootScope.$on('$locationChangeStart', function (event, newUrl) {
-            console.log(validStateUrls);
-            var urlWithoutIds = newUrl.replace(/\/[0-9]+/g, '/');
+            var nextState, urlWithoutIds = newUrl.replace(/\/[0-9]+/g, '/');
 
-            console.log(urlWithoutIds);
+            //nextState = _.find($state.get(), function (state) {
+            //    var found = false, stateUrl = $state.href($state.get(state));
+            //
+            //    console.log(stateUrl);
+            //    if (urlWithoutIds.indexOf(stateUrl) > -1) {
+            //        found = true;
+            //    }
+            //
+            //    return found;
+            //});
 
-            if (!_.contains(validStateUrls, urlWithoutIds)) {
-                console.log("not in urls!");
-                // Remove the old browser path if present
-                newUrl = newUrl.replace(oldBrowserPath, '');
-                //event.preventDefault();
-                //$window.location.href = newUrl;
-            }
+            //if (nextState === undefined) {
+            //    console.log("not in bastion urls!")
+            //
+            //    // Remove the old browser path if present
+            //    newUrl = newUrl.replace(oldBrowserPath, '');
+            //    //event.preventDefault();
+            //    //$window.location.href = newUrl;
+            //}
+
+            console.log(UrlMatcher(newUrl));
         });
     }
 ]);
