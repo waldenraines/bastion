@@ -8,7 +8,6 @@
  */
 angular.module('Bastion', [
     'ui.router',
-    'ui.router.util',
     'ngResource',
     'Bastion.i18n',
     'Bastion.components'
@@ -113,14 +112,14 @@ angular.module('Bastion').config(
  * @requires $window
  * @requires PageTitle
  * @requires markActiveMenu
- * @requires $urlMatcherFactory
+ * @requires $urlRouter
  * @requires oldBrowserPath
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', '$urlMatcherFactory', 'oldBrowserPath',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, $urlMatcherFactory, oldBrowserPath) {
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', '$urlRouter', 'oldBrowserPath',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, $urlRouter, oldBrowserPath) {
         var fromState, fromParams;
 
         $rootScope.$state = $state;
@@ -209,7 +208,8 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
             //    //$window.location.href = newUrl;
             //}
 
-            console.log($urlMatcherFactory(newUrl));
+            console.log(event);
+            console.log($urlRouter.href(newUrl));
         });
     }
 ]);
