@@ -198,8 +198,8 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
                 console.log("not in urls!");
                 // Remove the old browser path if present
                 newUrl = newUrl.replace(oldBrowserPath, '');
-                event.preventDefault();
-                $window.location.href = newUrl;
+                //event.preventDefault();
+                //$window.location.href = newUrl;
             }
         });
     }
