@@ -194,7 +194,8 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
 
             console.log(urlWithoutIds);
 
-            if (_.contains(validStateUrls, urlWithoutIds)) {
+            if (!_.contains(validStateUrls, urlWithoutIds)) {
+                console.log("not in urls!");
                 // Remove the old browser path if present
                 newUrl = newUrl.replace(oldBrowserPath, '');
                 event.preventDefault();
