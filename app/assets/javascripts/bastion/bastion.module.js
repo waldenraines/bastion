@@ -113,14 +113,14 @@ angular.module('Bastion').config(
  * @requires $window
  * @requires PageTitle
  * @requires markActiveMenu
- * @requires UrlMatcher
+ * @requires $urlMatcherFactory
  * @requires oldBrowserPath
  *
  * @description
  *   Set up some common state related functionality and set the current language.
  */
-angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', 'UrlMatcher', 'oldBrowserPath',
-    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, UrlMatcher, oldBrowserPath) {
+angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextCatalog', 'currentLocale', '$location', '$window', 'PageTitle', 'markActiveMenu', '$urlMatcherFactory', 'oldBrowserPath',
+    function ($rootScope, $state, $stateParams, gettextCatalog, currentLocale, $location, $window, PageTitle, markActiveMenu, $urlMatcherFactory, oldBrowserPath) {
         var fromState, fromParams;
 
         $rootScope.$state = $state;
@@ -209,7 +209,7 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
             //    //$window.location.href = newUrl;
             //}
 
-            console.log(UrlMatcher(newUrl));
+            console.log($urlMatcherFactory(newUrl));
         });
     }
 ]);
