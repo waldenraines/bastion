@@ -190,22 +190,18 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
             nextState = _.find($state.get(), function (state) {
                 var found = false, stateUrl = $state.href($state.get(state));
 
-                console.log(stateUrl);
                 if (urlWithoutIds.indexOf(stateUrl) > -1) {
                     found = true;
                 }
 
                 return found;
             });
-            console.log(nextState);
 
             if (nextState === undefined) {
-                console.log("not in bastion urls!")
-
                 // Remove the old browser path if present
                 newUrl = newUrl.replace(oldBrowserPath, '');
-                //event.preventDefault();
-                //$window.location.href = newUrl;
+                event.preventDefault();
+                $window.location.href = newUrl;
             }
         });
     }
