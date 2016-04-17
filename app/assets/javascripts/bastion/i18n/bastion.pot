@@ -9,6 +9,10 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Add Bookmark"
+msgstr ""
+
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Add New Item"
 msgstr ""
@@ -19,6 +23,14 @@ msgstr ""
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "All {{ table.rows.length }} items on this page are selected."
+msgstr ""
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Bookmark this search"
+msgstr ""
+
+#: app/assets/javascripts/bastion/components/bst-bookmark.directive.js
+msgid "Bookmark was successfully created."
 msgstr ""
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
@@ -41,6 +53,10 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Filter..."
+msgstr ""
+
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Key"
 msgstr ""
@@ -50,8 +66,20 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Name"
+msgstr ""
+
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "No"
+msgstr ""
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "No Bookmarks"
+msgstr ""
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Public"
 msgstr ""
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
@@ -59,6 +87,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Save"
@@ -68,8 +97,15 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Search"
+msgstr ""
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Search query"
+msgstr ""
+
+#: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "Search..."
 msgstr ""
 
