@@ -57,15 +57,15 @@ td.row-select {
       }
     }
 
-    tr.active form, tr:hover form, tr:focus form {
-      color: #FFF;
-    }
-
     tr.active, tbody tr:hover, tr.selected-row td {
       background-color: $listhover_color;
       color: #FFF;
 
       a {
+        color: #FFF;
+      }
+
+      form {
         color: #FFF;
       }
     }
