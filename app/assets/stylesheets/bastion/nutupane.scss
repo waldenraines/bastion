@@ -55,10 +55,10 @@ td.row-select {
       button, select {
         color: #000;
       }
+    }
 
-      form {
-        color: #FFF;
-      }
+    tr.active form, tr:hover form, tr:focus form {
+      color: #FFF;
     }
 
     tr.active, tbody tr:hover, tr.selected-row td {
