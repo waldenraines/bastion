@@ -3,60 +3,65 @@
   <div bst-global-notification></div>
 
   <div class="row nutupane-bar">
-    <h2 class="col-sm-2">
-      <span data-block="header">
-        REPLACE ME
-      </span>
-    </h2>
-  </div>
-
-  <div class="row nutupane-bar">
-
-    <div class="row">
-      <div class="col-sm-12">
-        <div data-block="search-filter"></div>
-      </div>
-    </div>
-
-
-    <div class="col-sm-3 nutupane-info">
-      <div class="input-group input-group">
-        <input type="text"
-               class="form-control"
-               placeholder="{{ 'Filter...' | translate }}"
-               bst-on-enter="table.search(table.searchTerm)"
-               ng-model="table.searchTerm"
-               ng-trim="false"
-               typeahead="item.label for item in table.autocomplete($viewValue)"
-               typeahead-empty
-               typeahead-template-url="components/views/autocomplete-scoped-search.html"/>
-        <span class="input-group-btn">
-          <button ng-click="table.search(table.searchTerm)" class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-            <span translate>Search</span>
-          </button>
-          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <ul bst-bookmark controller-name="controllerName" query="table.searchTerm" class="dropdown-menu pull-right"></ul>
+    <div class="col-sm-2 pull-left">
+      <h2>
+        <span data-block="header">
+          REPLACE ME
         </span>
+
+        <small>
+          <span translate>Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table.resource.total }} Total)</span>
+        </small>
+      </h2>
+    </div>
+
+    <div class="col-sm-3 pull-right">
+      <div class="pull-right">
+        <div class="input-group input-group">
+          <input type="text"
+                 class="form-control"
+                 placeholder="{{ 'Filter...' | translate }}"
+                 bst-on-enter="table.search(table.searchTerm)"
+                 ng-model="table.searchTerm"
+                 ng-trim="false"
+                 typeahead="item.label for item in table.autocomplete($viewValue)"
+                 typeahead-empty
+                 typeahead-template-url="components/views/autocomplete-scoped-search.html"/>
+          <span class="input-group-btn">
+            <button ng-click="table.search(table.searchTerm)" class="btn btn-default" type="button">
+              <i class="fa fa-search"></i>
+              <span translate>Search</span>
+            </button>
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <ul bst-bookmark controller-name="controllerName" query="table.searchTerm" class="dropdown-menu pull-right"></ul>
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="col-sm-3 nutupane-info">
-      <span translate>Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table.resource.total }} Total)</span>
-    </div>
+    <div class="col-sm-1 pull-right">
+      <div class="pull-right">
+        <div class="btn-group" dropdown is-open="status.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle>
+            <span translate>Actions</span>
+            <span class="caret"></span>
+          </button>
 
-    <div class="fr">
-      <div class="nutupane-info fl" ng-if="table.rowSelect">
-        <span translate>{{ table.numSelected }} Selected</span>
-      </div>
-
-      <div class="fl">
-        <div data-block="actions"></div>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+            <span data-block="actions"></span>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-12">-->
+      <!--<div data-block="search-filter"></div>-->
+    <!--</div>-->
+  <!--</div>-->
 
   <div class="row nutupane" bst-table="table" nutupane-table ng-class="{'table-reduced': $root.$state.current.collapsed}">
     <div class="loading-mask" ng-show="table.refreshing" ng-class="{ 'loading-mask-collapsed': $root.$state.current.collapsed }">
