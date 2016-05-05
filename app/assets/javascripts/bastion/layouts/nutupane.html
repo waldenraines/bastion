@@ -4,10 +4,6 @@
 
   <div class="row nutupane-bar">
     <div class="col-sm-2">
-      <a class="fr nutupane-info" ng-click="showSearch = !showSearch">
-        <i ng-hide="showSearch" class="fa fa-search-plus fa-2x"></i>
-        <i ng-show="showSearch" class="fa fa-search-minus fa-2x"></i>
-      </a>
       <h2>
         <span data-block="header">
           REPLACE ME
@@ -20,6 +16,11 @@
     </div>
 
     <div class="fr">
+      <button ng-click="showSearch = !showSearch" class="btn btn-default" type="button">
+        <i class="fa fa-search"></i>
+        <span translate>Search</span>
+      </button>
+
       <div data-block="actions"></div>
     </div>
   </div>
