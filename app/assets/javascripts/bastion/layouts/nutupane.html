@@ -1,23 +1,33 @@
-<section>
+<section ng-controller="NutupaneController">
 
   <div bst-global-notification></div>
 
   <div class="row nutupane-bar">
-    <h2 class="col-sm-2">
-      <span data-block="header">
-        REPLACE ME
-      </span>
-    </h2>
-  </div>
+    <div class="col-sm-2">
+      <a class="fr nutupane-info" ng-click="showSearch = !showSearch">
+        <i ng-hide="showSearch" class="fa fa-search-plus fa-2x"></i>
+        <i ng-show="showSearch" class="fa fa-search-minus fa-2x"></i>
+      </a>
+      <h2>
+        <span data-block="header">
+          REPLACE ME
+        </span>
 
-  <div class="row nutupane-bar">
-
-    <div class="row">
-      <div class="col-sm-12">
-        <div data-block="search-filter"></div>
-      </div>
+        <small>
+          <span translate>Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table.resource.total }} Total)</span>
+        </small>
+      </h2>
     </div>
 
+    <div class="fr">
+      <div data-block="actions"></div>
+    </div>
+  </div>
+
+  <div class="row nutupane-bar" ng-show="showSearch">
+    <a class="fr" ng-click="showSearch = false">
+      <i class="fa fa-close fa-2x"></i>
+    </a>
 
     <div class="col-sm-3 nutupane-info">
       <div class="input-group input-group">
@@ -43,17 +53,9 @@
       </div>
     </div>
 
-    <div class="col-sm-3 nutupane-info">
-      <span translate>Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table.resource.total }} Total)</span>
-    </div>
-
-    <div class="fr">
-      <div class="nutupane-info fl" ng-if="table.rowSelect">
-        <span translate>{{ table.numSelected }} Selected</span>
-      </div>
-
-      <div class="fl">
-        <div data-block="actions"></div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div data-block="search-filter"></div>
       </div>
     </div>
   </div>

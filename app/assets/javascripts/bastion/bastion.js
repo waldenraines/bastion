@@ -30,6 +30,8 @@
 //= require "bastion/components/formatters/components-formatters.module"
 //= require_tree "./components"
 
+//= require_tree "./layouts"
+
 //= require "bastion/utils/utils.module"
 //= require_tree "./utils"
 
