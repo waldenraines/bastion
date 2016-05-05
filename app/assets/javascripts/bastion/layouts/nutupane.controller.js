@@ -2,12 +2,12 @@
 
     /**
      * @ngdoc controller
-     * @name Bastion.NutupaneController
+     * @name Bastion.NutupaneLayoutController
      *
      * @description
-     *   Wraps the
+     *   Basic functionality for the nutupane layout.
      */
-    function NutupaneController($rootScope, $scope, $state) {
+    function NutupaneLayoutController($rootScope, $scope, $state) {
         $scope.showSearch = !$state.current.collapsed;
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState) {
@@ -17,8 +17,8 @@
 
     angular
         .module('Bastion')
-        .controller('NutupaneController', NutupaneController);
+        .controller('NutupaneLayoutController', NutupaneLayoutController);
 
-    NutupaneController.$inject = ['$rootScope', '$scope', '$state'];
+    NutupaneLayoutController.$inject = ['$rootScope', '$scope', '$state'];
 
 })();
