@@ -1,23 +1,31 @@
 # gcintra <gcintra@redhat.com>, 2014. #zanata
 # gcintra <gcintra@redhat.com>, 2015. #zanata
+# bkearney <bkearney@redhat.com>, 2016. #zanata
+# dcbw <dcbw@redhat.com>, 2016. #zanata
+# msuppesd <msuppesd@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-03-12 01:22+0000\n"
-"Last-Translator: gcintra <gcintra@redhat.com>\n"
+"PO-Revision-Date: 2016-05-06 12:46+0000\n"
+"Last-Translator: msuppesd <msuppesd@redhat.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
-"Language: pt-BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: pt-BR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 3.8.4\n"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gcintra
+# translation auto-copied from project Customer Portal Translations, version
+# Portal-Case-Management, document Template, author gcintra
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 msgid "Add"
 msgstr "Adicionar"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Add Bookmark"
+msgstr "Adicionar marcador"
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Add New Item"
@@ -31,9 +39,19 @@ msgstr ""
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "All {{ table.rows.length }} items on this page are selected."
-msgstr "Todos os itens {{ table.rows.length }}nesta página estão selecionados."
+msgstr ""
+"Todos os itens {{ table.rows.length }}nesta página estão selecionados."
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Bookmark this search"
+msgstr "Adicionar esta pesquisa à um marcador"
+
+#: app/assets/javascripts/bastion/components/bst-bookmark.directive.js
+msgid "Bookmark was successfully created."
+msgstr "Marcador foi criado com sucesso."
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version
+# 6.1, document foreman_discovery
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
@@ -50,47 +68,81 @@ msgstr "Desmarcar Todos"
 msgid "Existing Items"
 msgstr "Itens existentes"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+# translation auto-copied from project Satellite6 Foreman, version 6.1,
+# document foreman
 #: app/assets/javascripts/bastion/components/views/bst-edit-multiselect.html
 msgid "Filter"
 msgstr "Filtro"
 
-# translation auto-copied from project NetworkManager, version 0.9.9.0, document NetworkManager, author gcintra
+# translation auto-copied from project Satellite6 Katello, version Sam-1.3.0,
+# document katello
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Filter..."
+msgstr "Filtro..."
+
+# translation auto-copied from project NetworkManager, version 0.9.9.0,
+# document NetworkManager, author gcintra
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Key"
 msgstr "Chave"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+# translation auto-copied from project evolution, version 3.8.5, document
+# evolution-3.8
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Loading..."
 msgstr "Carregando..."
 
-# translation auto-copied from project Customer Portal Translations, version RHJBossMiddlewareOperationsNetworkProduc, document RHJBossMiddlewareOperationsNetworkProductUpdate.html, author gcintra
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Name"
+msgstr "Nome"
+
+# translation auto-copied from project Customer Portal Translations, version
+# RHJBossMiddlewareOperationsNetworkProduc, document
+# RHJBossMiddlewareOperationsNetworkProductUpdate.html, author gcintra
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "No"
 msgstr "Não"
 
-# translation auto-copied from project NetworkManager, version 0.9.9.0, document NetworkManager, author gcintra
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "No Bookmarks"
+msgstr "Nenhum marcador "
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Public"
+msgstr "Público"
+
+# translation auto-copied from project NetworkManager, version 0.9.9.0,
+# document NetworkManager, author gcintra
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
 msgid "Remove"
 msgstr "Remover"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+# translation auto-copied from project Satellite6 Foreman, version 6.1,
+# document foreman
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Save"
 msgstr "Salvar"
 
-# translation auto-copied from project gnome-boxes, version 3.8.3, document gnome-boxes
+# translation auto-copied from project gnome-boxes, version 3.8.3, document
+# gnome-boxes
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Saving..."
 msgstr "Salvando..."
 
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Search"
+msgstr "Buscar"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Search query"
+msgstr "Pesquisar consulta "
+
 # translation auto-copied from project yelp, version 3.8.1, document yelp
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
-#: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Search..."
 msgstr "Pesquisar..."
 
@@ -104,38 +156,44 @@ msgstr "Selecionar todos  {{ table.resource.subtotal }}."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid ""
-"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource."
-"subtotal }} ({{ detailsTable.resource.total }} Total)"
+"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource.subtotal "
+"}} ({{ detailsTable.resource.total }} Total)"
 msgstr ""
-"Exibir {{ detailsTable.rows.length }} de {{ detailsTable.resource."
-"subtotal }} ({{ detailsTable.resource.total }} Total)"
+"Exibir {{ detailsTable.rows.length }} de {{ detailsTable.resource.subtotal "
+"}} ({{ detailsTable.resource.total }} Total)"
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid ""
-"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table."
-"resource.total }} Total)"
+"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ "
+"table.resource.total }} Total)"
 msgstr ""
-"Exibindo {{ table.rows.length }} de {{ table.resource.subtotal }} ({{ table."
-"resource.total }} Total)"
+"Exibindo {{ table.rows.length }} de {{ table.resource.subtotal }} ({{ "
+"table.resource.total }} Total)"
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author gcintra
+# translation auto-copied from project Customer Portal Translations, version
+# RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author
+# gcintra
 #: app/assets/javascripts/bastion/components/formatters/unlimitedFilter.filter.js
 msgid "Unlimited"
 msgstr "Ilimitado"
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+# translation auto-copied from project Satellite6 Foreman Discovery, version
+# 6.1, document foreman_discovery
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Value"
 msgstr "Valor"
 
-# translation auto-copied from project anaconda, version 19.31.34, document anaconda
+# translation auto-copied from project anaconda, version 19.31.34, document
+# anaconda
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 msgid "Working"
 msgstr "Operando"
 
-# translation auto-copied from project Customer Portal Translations, version RHJBossMiddlewareOperationsNetworkProduc, document RHJBossMiddlewareOperationsNetworkProductUpdate.html, author gcintra
+# translation auto-copied from project Customer Portal Translations, version
+# RHJBossMiddlewareOperationsNetworkProduc, document
+# RHJBossMiddlewareOperationsNetworkProductUpdate.html, author gcintra
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "Yes"
 msgstr "Sim"

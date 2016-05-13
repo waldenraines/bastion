@@ -1,26 +1,35 @@
 # asasaki <asasaki@redhat.com>, 2014. #zanata
-# kmoriguc <kmoriguc@redhat.com>, 2014. #zanata
 # Ykatabam <ykatabam@redhat.com>, 2015. #zanata
 # asasaki <asasaki@redhat.com>, 2015. #zanata
 # myamamot <myamamot@redhat.com>, 2015. #zanata
+# bkearney <bkearney@redhat.com>, 2016. #zanata
+# dcbw <dcbw@redhat.com>, 2016. #zanata
+# noriko <noriko@redhat.com>, 2016. #zanata
+# pnemade <pnemade@redhat.com>, 2016. #zanata
+# tnagamot <tnagamot@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-03-19 02:10+0000\n"
-"Last-Translator: asasaki <asasaki@redhat.com>\n"
+"PO-Revision-Date: 2016-05-03 12:08+0000\n"
+"Last-Translator: tnagamot <tnagamot@redhat.com>\n"
 "Language-Team: Japanese\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 3.8.4\n"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author asasaki
+# translation auto-copied from project Customer Portal Translations, version
+# Portal-Case-Management, document Template, author asasaki
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 msgid "Add"
 msgstr "追加"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Add Bookmark"
+msgstr "ブックマークの追加"
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Add New Item"
@@ -28,14 +37,22 @@ msgstr "新規項目の追加"
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "All {{ detailsTable.rows.length }} items on this page are selected."
-msgstr ""
-"このページのすべての {{ detailsTable.rows.length }} 項目が選択されています。"
+msgstr "このページのすべての {{ detailsTable.rows.length }} 項目が選択されています。"
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "All {{ table.rows.length }} items on this page are selected."
 msgstr "このページのすべての {{ table.rows.length }} 項目が選択されています。"
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Bookmark this search"
+msgstr "この検索をブックマーク"
+
+#: app/assets/javascripts/bastion/components/bst-bookmark.directive.js
+msgid "Bookmark was successfully created."
+msgstr "ブックマークが正常に作成されました。"
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version
+# 6.1, document foreman_discovery
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
@@ -43,7 +60,8 @@ msgstr "このページのすべての {{ table.rows.length }} 項目が選択�
 msgid "Cancel"
 msgstr "取り消し"
 
-# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+# translation auto-copied from project Customer Portal Translations, version
+# 006_DrupalPO, document interface, author asasaki
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "Deselect all"
@@ -53,47 +71,80 @@ msgstr "すべての選択を解除"
 msgid "Existing Items"
 msgstr "既存の項目"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 8195-743186, author Ykatabam
+# translation auto-copied from project PressGang CCMS topics, version 1,
+# document 8195-743186, author Ykatabam
 #: app/assets/javascripts/bastion/components/views/bst-edit-multiselect.html
 msgid "Filter"
 msgstr "フィルター"
 
-# translation auto-copied from project RHELOSP Deploying POC Env, version 6.0, document topics/Editing_a_PackStack_Answer_File, author myamamot
+# translation auto-copied from project Satellite6 Katello, version Sam-1.3.0,
+# document katello, author nnakakit
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Filter..."
+msgstr "フィルター..."
+
+# translation auto-copied from project RHELOSP Deploying POC Env, version 6.0,
+# document topics/Editing_a_PackStack_Answer_File, author myamamot
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Key"
 msgstr "キー"
 
-# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+# translation auto-copied from project Customer Portal Translations, version
+# 006_DrupalPO, document interface, author asasaki
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Loading..."
 msgstr "ロード中..."
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 10186-726104, author myamamot
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Name"
+msgstr "名前"
+
+# translation auto-copied from project PressGang CCMS topics, version 1,
+# document 10186-726104, author myamamot
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "No"
 msgstr "No"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 6855-635853, author tnagamot
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "No Bookmarks"
+msgstr "ブックマークなし"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Public"
+msgstr "公開"
+
+# translation auto-copied from project PressGang CCMS topics, version 1,
+# document 6855-635853, author tnagamot
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
 msgid "Remove"
 msgstr "削除"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+# translation auto-copied from project Satellite6 Foreman, version 6.1,
+# document foreman
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Save"
 msgstr "保存"
 
-# translation auto-copied from project gnome-boxes, version 3.8.3, document gnome-boxes
+# translation auto-copied from project gnome-boxes, version 3.8.3, document
+# gnome-boxes
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Saving..."
 msgstr "保存中..."
 
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Search"
+msgstr "検索"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Search query"
+msgstr "検索クエリー"
+
 # translation auto-copied from project yelp, version 3.8.1, document yelp
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
-#: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Search..."
 msgstr "検索..."
 
@@ -107,38 +158,43 @@ msgstr "すべての {{ table.resource.subtotal }} を選択します。"
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid ""
-"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource."
-"subtotal }} ({{ detailsTable.resource.total }} Total)"
+"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource.subtotal "
+"}} ({{ detailsTable.resource.total }} Total)"
 msgstr ""
-"{{ detailsTable.resource.subtotal }} (合計 {{ detailsTable.resource."
-"total }}) 中 {{ detailsTable.rows.length }} 件を表示中 "
+"{{ detailsTable.resource.subtotal }} (合計 {{ detailsTable.resource.total }}) "
+"中 {{ detailsTable.rows.length }} 件を表示中 "
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid ""
-"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table."
-"resource.total }} Total)"
+"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ "
+"table.resource.total }} Total)"
 msgstr ""
-"{{ table.resource.subtotal }} (合計 {{ table.resource.total }}) 中 {{ table."
-"rows.length }} 件を表示中"
+"{{ table.resource.subtotal }} (合計 {{ table.resource.total }}) 中 {{ "
+"table.rows.length }} 件を表示中"
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author kmoriguc
+# translation auto-copied from project Customer Portal Translations, version
+# RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author
+# kmoriguc
 #: app/assets/javascripts/bastion/components/formatters/unlimitedFilter.filter.js
 msgid "Unlimited"
 msgstr "無制限"
 
-# translation auto-copied from project RHELOSP Deploying Learning Env, version 5.0, document topics/Installation_Prerequisites_Checklists
+# translation auto-copied from project RHELOSP Deploying Learning Env, version
+# 5.0, document topics/Installation_Prerequisites_Checklists
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Value"
 msgstr "値"
 
-# translation auto-copied from project anaconda, version 19.31.34, document anaconda
+# translation auto-copied from project anaconda, version 19.31.34, document
+# anaconda
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 msgid "Working"
 msgstr "稼働中"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 10186-726104, author myamamot
+# translation auto-copied from project PressGang CCMS topics, version 1,
+# document 10186-726104, author myamamot
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "Yes"
 msgstr "Yes"
@@ -149,8 +205,7 @@ msgstr "このアクションを実行する権限がありません。"
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.allResultsSelectCount() }} results are selected."
-msgstr ""
-"{{ detailsTable.allResultsSelectCount() }} 件の結果が選択されています。"
+msgstr "{{ detailsTable.allResultsSelectCount() }} 件の結果が選択されています。"
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.numSelected }} Selected"
