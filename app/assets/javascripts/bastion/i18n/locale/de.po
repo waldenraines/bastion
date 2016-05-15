@@ -1,24 +1,32 @@
 # hpeters <hpeters@redhat.com>, 2014. #zanata
 # hpeters <hpeters@redhat.com>, 2015. #zanata
 # jdimanos <jdimanos@redhat.com>, 2015. #zanata
+# bkearney <bkearney@redhat.com>, 2016. #zanata
+# dcbw <dcbw@redhat.com>, 2016. #zanata
+# lstemmle <lstemmle@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-03-18 02:33+0000\n"
-"Last-Translator: hpeters <hpeters@redhat.com>\n"
+"PO-Revision-Date: 2016-05-05 11:16+0000\n"
+"Last-Translator: lstemmle <lstemmle@redhat.com>\n"
 "Language-Team: German\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 3.8.4\n"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author jdimanos
+# translation auto-copied from project Customer Portal Translations, version
+# Portal-Case-Management, document Template, author jdimanos
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 msgid "Add"
 msgstr "Hinzufügen"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Add Bookmark"
+msgstr "Lesezeichen hinzufügen"
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Add New Item"
@@ -35,7 +43,16 @@ msgid "All {{ table.rows.length }} items on this page are selected."
 msgstr ""
 "Alle {{ table.rows.length }} Elemente auf dieser Seite sind ausgewählt."
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Bookmark this search"
+msgstr "Diese Suche als Lesezeichen abspeichern"
+
+#: app/assets/javascripts/bastion/components/bst-bookmark.directive.js
+msgid "Bookmark was successfully created."
+msgstr "Das Lesezeichen wurde erfolgreich erstellt."
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version
+# 6.1, document foreman_discovery
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
@@ -52,47 +69,81 @@ msgstr "Alle abwählen"
 msgid "Existing Items"
 msgstr "Vorhandene Elemente"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+# translation auto-copied from project Satellite6 Foreman, version 6.1,
+# document foreman
 #: app/assets/javascripts/bastion/components/views/bst-edit-multiselect.html
 msgid "Filter"
 msgstr "Filter"
 
-# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author hpeters
+# translation auto-copied from project Satellite6 Katello, version Sam-1.3.0,
+# document katello
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Filter..."
+msgstr "Filtern …"
+
+# translation auto-copied from project Customer Portal Translations, version
+# 006_DrupalPO, document interface, author hpeters
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Key"
 msgstr "Schlüssel"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+# translation auto-copied from project evolution, version 3.8.5, document
+# evolution-3.8
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Loading..."
 msgstr "Wird geladen …"
 
-# translation auto-copied from project Customer Portal Translations, version RHJBossMiddlewareOperationsNetworkProduc, document RHJBossMiddlewareOperationsNetworkProductUpdate.html, author jdimanos
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Name"
+msgstr "Name"
+
+# translation auto-copied from project Customer Portal Translations, version
+# RHJBossMiddlewareOperationsNetworkProduc, document
+# RHJBossMiddlewareOperationsNetworkProductUpdate.html, author jdimanos
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "No"
 msgstr "Nein"
 
-# translation auto-copied from project NetworkManager, version 0.9.9.0, document NetworkManager, author hpeters
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "No Bookmarks"
+msgstr "Keine Lesezeichen"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Public"
+msgstr "Öffentlich"
+
+# translation auto-copied from project NetworkManager, version 0.9.9.0,
+# document NetworkManager, author hpeters
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
 msgid "Remove"
 msgstr "Entfernen"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+# translation auto-copied from project Satellite6 Foreman, version 6.1,
+# document foreman
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Save"
 msgstr "Speichern"
 
-# translation auto-copied from project gnome-boxes, version 3.8.3, document gnome-boxes
+# translation auto-copied from project gnome-boxes, version 3.8.3, document
+# gnome-boxes
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Saving..."
 msgstr "Speichern …"
 
+#: app/assets/javascripts/bastion/layouts/nutupane.html
+msgid "Search"
+msgstr "Suche"
+
+#: app/assets/javascripts/bastion/components/views/bst-bookmark.html
+msgid "Search query"
+msgstr "Suchanfrage"
+
 # translation auto-copied from project yelp, version 3.8.1, document yelp
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
-#: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Search..."
 msgstr "Suchen …"
 
@@ -106,38 +157,43 @@ msgstr "Alle {{ table.resource.subtotal }} auswählen."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid ""
-"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource."
-"subtotal }} ({{ detailsTable.resource.total }} Total)"
+"Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource.subtotal "
+"}} ({{ detailsTable.resource.total }} Total)"
 msgstr ""
 "{{ detailsTable.rows.length }} von {{ detailsTable.resource.subtotal }} "
 "werden angezeigt ({{ detailsTable.resource.total }} insgesamt)"
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid ""
-"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ table."
-"resource.total }} Total)"
+"Showing {{ table.rows.length }} of {{ table.resource.subtotal }} ({{ "
+"table.resource.total }} Total)"
 msgstr ""
 "{{ table.rows.length }} von {{ table.resource.subtotal }} werden angezeigt "
 "({{ table.resource.total }} insgesamt)"
 
-# translation auto-copied from project Satellite6 Hammer CLI Katello, version 6.1, document hammer-cli-katello
+# translation auto-copied from project Satellite6 Hammer CLI Katello, version
+# 6.1, document hammer-cli-katello
 #: app/assets/javascripts/bastion/components/formatters/unlimitedFilter.filter.js
 msgid "Unlimited"
 msgstr "Unbegrenzt"
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+# translation auto-copied from project Satellite6 Foreman Discovery, version
+# 6.1, document foreman_discovery
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 msgid "Value"
 msgstr "Wert"
 
-# translation auto-copied from project anaconda, version 19.31.34, document anaconda
+# translation auto-copied from project anaconda, version 19.31.34, document
+# anaconda
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-item.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-edit-save-cancel.html
 msgid "Working"
 msgstr "In Arbeit"
 
-# translation auto-copied from project Customer Portal Translations, version RHJBossMiddlewareOperationsNetworkProduc, document RHJBossMiddlewareOperationsNetworkProductUpdate.html, author jdimanos
+# translation auto-copied from project Customer Portal Translations, version
+# RHJBossMiddlewareOperationsNetworkProduc, document
+# RHJBossMiddlewareOperationsNetworkProductUpdate.html, author jdimanos
 #: app/assets/javascripts/bastion/components/formatters/boolean-to-yes-no.filter.js
 msgid "Yes"
 msgstr "Ja"
@@ -148,7 +204,8 @@ msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.allResultsSelectCount() }} results are selected."
-msgstr "{{ detailsTable.allResultsSelectCount() }} Ergebnisse sind ausgewählt."
+msgstr ""
+"{{ detailsTable.allResultsSelectCount() }} Ergebnisse sind ausgewählt."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.numSelected }} Selected"
