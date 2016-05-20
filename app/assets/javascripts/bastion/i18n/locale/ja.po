@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2016-05-03 12:08+0000\n"
+"PO-Revision-Date: 2016-05-16 12:27+0000\n"
 "Last-Translator: tnagamot <tnagamot@redhat.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "ブックマークが正常に作成されました。"
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Cancel"
-msgstr "取り消し"
+msgstr "キャンセル"
 
 # translation auto-copied from project Customer Portal Translations, version
 # 006_DrupalPO, document interface, author asasaki

@@ -62,7 +62,7 @@ msgstr "Cancelar"
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "Deselect all"
-msgstr "Desmarcar todos"
+msgstr "Desmarcar todas"
 
 #: app/assets/javascripts/bastion/components/views/bst-edit-multiselect.html
 msgid "Existing Items"
@@ -91,7 +91,7 @@ msgstr "Llave"
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Loading..."
-msgstr "Cargando…"
+msgstr "Cargando..."
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Name"
@@ -106,7 +106,7 @@ msgstr "No"
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "No Bookmarks"
-msgstr ""
+msgstr "Sin marcadores"
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Public"
@@ -117,7 +117,7 @@ msgstr "Público"
 #: app/assets/javascripts/bastion/components/views/bst-edit-add-remove-cancel.html
 #: app/assets/javascripts/bastion/components/views/bst-modal.html
 msgid "Remove"
-msgstr "Retirar"
+msgstr "Borrar"
 
 # translation auto-copied from project Customer Portal Translations, version
 # Portal-Case-Management, document Template, author gguerrer
@@ -139,7 +139,7 @@ msgstr "Buscar"
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Search query"
-msgstr ""
+msgstr "Consulta de búsqueda"
 
 # translation auto-copied from project yelp, version 3.8.1, document yelp
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
@@ -208,7 +208,7 @@ msgstr "{{ detailsTable.allResultsSelectCount() }} resultados seleccionados."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.numSelected }} Selected"
-msgstr "{{ detailsTable.numSelected }} Selecionados"
+msgstr "{{ detailsTable.numSelected }} Seleccionados"
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "{{ table.allResultsSelectCount() }} results are selected."
