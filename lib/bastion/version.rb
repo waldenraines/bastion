@@ -1,3 +1,3 @@
 module Bastion
-  VERSION = '3.2.0.5'
+  VERSION = '3.2.0.6'
 end
