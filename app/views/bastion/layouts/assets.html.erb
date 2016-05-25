@@ -21,7 +21,7 @@
       id: <%= User.current.id %>,
       admin: <%= User.current.admin || User.current.usergroups.any? { |group| group.admin } %>,
       <% if User.current.timezone %>
-        timezone: "<%= Time.find_zone!(User.current.timezone).formatted_offset %>"
+        timezone: "<%= Time.find_zone!(User.current.timezone).formatted_offset(false) %>"
       <% end %>
     });
     angular.module('Bastion').value('markActiveMenu', mark_active_menu);
