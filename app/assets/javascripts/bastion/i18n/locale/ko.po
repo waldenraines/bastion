@@ -103,7 +103,7 @@ msgstr "아니요"
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "No Bookmarks"
-msgstr ""
+msgstr "북마크 없음"
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Public"
@@ -128,7 +128,7 @@ msgstr "저장"
 # gnome-boxes
 #: app/assets/javascripts/bastion/components/views/bst-save-control.html
 msgid "Saving..."
-msgstr "저장중..."
+msgstr "저장 중..."
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "Search"
@@ -136,7 +136,7 @@ msgstr "검색 "
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Search query"
-msgstr ""
+msgstr "검색 쿼리"
 
 # translation auto-copied from project yelp, version 3.8.1, document yelp
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
@@ -156,8 +156,8 @@ msgid ""
 "Showing {{ detailsTable.rows.length }} of {{ detailsTable.resource.subtotal "
 "}} ({{ detailsTable.resource.total }} Total)"
 msgstr ""
-"{{ detailsTable.resource.subtotal }} 중 {{ detailsTable.rows.length }}  (총 {{"
-" detailsTable.resource.total }}) 표시 중"
+"{{ detailsTable.resource.subtotal }} 중 {{ detailsTable.rows.length }} (총 {{ "
+"detailsTable.resource.total }}) 표시 중"
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid ""
@@ -165,7 +165,7 @@ msgid ""
 "table.resource.total }} Total)"
 msgstr ""
 "{{ table.resource.subtotal }} 중 {{ table.rows.length }} (총 {{ "
-"table.resource.total }}) 표시 중 "
+"table.resource.total }}) 표시 중"
 
 # translation auto-copied from project Customer Portal Translations, version
 # RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author
@@ -201,16 +201,16 @@ msgstr "이 작업을 수행할 권한이 없습니다."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.allResultsSelectCount() }} results are selected."
-msgstr "{{ detailsTable.allResultsSelectCount() }} 개의 결과가 선택되어 있습니다. "
+msgstr "{{ detailsTable.allResultsSelectCount() }} 개의 결과가 선택되어 있습니다."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.numSelected }} Selected"
-msgstr "{{ detailsTable.numSelected }} 선택됨 "
+msgstr "{{ detailsTable.numSelected }} 선택됨"
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "{{ table.allResultsSelectCount() }} results are selected."
-msgstr "{{ table.allResultsSelectCount() }} 개의 결과가 선택되어 있습니다. "
+msgstr "{{ table.allResultsSelectCount() }} 개의 결과가 선택되어 있습니다."
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "{{ table.numSelected }} Selected"
-msgstr "{{ table.numSelected }} 선택됨 "
+msgstr "{{ table.numSelected }} 선택됨"

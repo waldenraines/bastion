@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2016-05-06 12:46+0000\n"
+"PO-Revision-Date: 2016-05-17 03:56+0000\n"
 "Last-Translator: msuppesd <msuppesd@redhat.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: app/assets/javascripts/bastion/components/views/bst-bookmark.html
 msgid "Bookmark this search"
-msgstr "Adicionar esta pesquisa à um marcador"
+msgstr "Adicionar esta pesquisa a um marcador"
 
 #: app/assets/javascripts/bastion/components/bst-bookmark.directive.js
 msgid "Bookmark was successfully created."
@@ -200,12 +200,11 @@ msgstr "Sim"
 
 #: app/assets/javascripts/bastion/auth/auth.module.js
 msgid "You are not authorized to perform this action."
-msgstr "Você não está autorizado a executar essa ação."
+msgstr "Você não está autorizado a desempenhar esta ação."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.allResultsSelectCount() }} results are selected."
-msgstr ""
-"{{ detailsTable.allResultsSelectCount() }} resultados são selecionados."
+msgstr "{{ detailsTable.allResultsSelectCount() }} resultados selecionados."
 
 #: app/assets/javascripts/bastion/layouts/details-nutupane.html
 msgid "{{ detailsTable.numSelected }} Selected"
@@ -213,7 +212,7 @@ msgstr "{{ detailsTable.numSelected }} Selecionado"
 
 #: app/assets/javascripts/bastion/layouts/select-all-results.html
 msgid "{{ table.allResultsSelectCount() }} results are selected."
-msgstr "{{ table.allResultsSelectCount() }} resultados são selecionados."
+msgstr "{{ table.allResultsSelectCount() }} resultados selecionados."
 
 #: app/assets/javascripts/bastion/layouts/nutupane.html
 msgid "{{ table.numSelected }} Selected"
