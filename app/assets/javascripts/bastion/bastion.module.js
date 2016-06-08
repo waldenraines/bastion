@@ -72,9 +72,9 @@ angular.module('Bastion').config(
             url = url.replace(oldBrowserBastionPath, '');
 
             console.log(path.split('/'));
-            console.log($state);
-            console.log($state.includes(path.split('/')[1]));
-            if (!$state.includes(path.split('/')[1])) {
+            console.log($state.get('hsdfhhosts'));
+            console.log($state.get(path.split('/')[1]));
+            if (!$state.is(path.split('/')[1])) {
                 $window.location.href = url;
             }
         });
