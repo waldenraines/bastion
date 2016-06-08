@@ -60,6 +60,7 @@ angular.module('Bastion').config(
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             console.log("otherwise()");
+            console.log($location);
             var $window = $injector.get('$window'),
                 url = $location.absUrl();
 
