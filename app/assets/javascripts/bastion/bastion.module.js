@@ -34,7 +34,8 @@ angular.module('Bastion').config(
 
         $httpProvider.defaults.headers.common = {
             Accept: 'application/json, text/plain, version=2; */*',
-            'X-CSRF-TOKEN': angular.element('meta[name=csrf-token]').attr('content')
+            'X-CSRF-TOKEN': angular.element('meta[name=csrf-token]').attr('content'),
+            isKatello: true
         };
 
         $urlRouterProvider.rule(function ($injector, $location) {
