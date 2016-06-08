@@ -70,7 +70,9 @@ angular.module('Bastion').config(
             // Remove the old browser path if present
             url = url.replace(oldBrowserBastionPath, '');
 
-            if (!$state.get(path.split('/')[1])) {
+            if ($state.get(path.split('/')[1])) {
+                $window.location.href = '/404';
+            } else {
                 $window.location.href = url;
             }
         });
