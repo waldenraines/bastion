@@ -59,7 +59,6 @@ angular.module('Bastion').config(
         });
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
-            console.log("otherwise()");
             var $window = $injector.get('$window'),
                 $state = $injector.get('$state'),
                 path = $location.path(),
@@ -71,10 +70,7 @@ angular.module('Bastion').config(
             // Remove the old browser path if present
             url = url.replace(oldBrowserBastionPath, '');
 
-            console.log(path.split('/'));
-            console.log($state.get('hsdfhhosts'));
-            console.log($state.get(path.split('/')[1]));
-            if (!$state.is(path.split('/')[1])) {
+            if (!$state.get(path.split('/')[1])) {
                 $window.location.href = url;
             }
         });
@@ -165,7 +161,6 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
         gettextCatalog.currentLanguage = currentLocale;
         $rootScope.$on('$stateChangeStart',
             function () {
-                console.log("stateChangeStart");
                 //save location.search so we can add it back after transition is done
                 this.locationSearch = $location.search().search;
             }
@@ -173,7 +168,6 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
 
         $rootScope.$on('$stateChangeSuccess',
             function (event, toState, toParams, fromStateIn, fromParamsIn) {
-                console.log("stateChangeStart");
                 //restore all query string parameters back to $location.search
                 if (this.locationSearch) {
                     $location.search('search', this.locationSearch);
@@ -198,7 +192,6 @@ angular.module('Bastion').run(['$rootScope', '$state', '$stateParams', 'gettextC
         // Prevent angular from handling org/location switcher URLs
         orgSwitcherRegex = new RegExp("/(organizations|locations)/(.+/)*(select|clear)");
         $rootScope.$on('$locationChangeStart', function (event, newUrl) {
-            console.log("locationChangeStart");
             if (newUrl.match(orgSwitcherRegex)) {
                 event.preventDefault();
                 $window.location.href = newUrl;
