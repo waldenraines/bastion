@@ -30,7 +30,7 @@ angular.module('Bastion', [
 angular.module('Bastion').config(
     ['$httpProvider', '$urlRouterProvider', '$locationProvider', '$provide', 'BastionConfig',
     function ($httpProvider, $urlRouterProvider, $locationProvider, $provide, BastionConfig) {
-        var oldBrowserBastionPath = '/bastion#';
+        var oldBrowserBastionPath = '/bastion/index.html#!';
 
         $httpProvider.defaults.headers.common = {
             Accept: 'application/json, text/plain, version=2; */*',
