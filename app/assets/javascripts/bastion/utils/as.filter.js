@@ -14,7 +14,7 @@
      </ul>
  */
 angular.module('Bastion.utils').filter('as', ['$parse', function ($parse) {
-    return function (value, path) {
-        return $parse(path).assign(this, value);
+    return function (value, context, path) {
+        return $parse(path).assign(context, value);
     };
 }]);
