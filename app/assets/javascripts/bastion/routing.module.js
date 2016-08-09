@@ -14,7 +14,11 @@ angular.module('Bastion.routing', ['ui.router']);
      *   Routing configuration for Bastion.
      */
     function bastionRouting($urlRouterProvider, $locationProvider) {
-        var oldBrowserBastionPath = '/bastion#';
+        var oldBrowserBastionPath = '/bastion#', getRootPath;
+
+        getRootPath = function (path) {
+            return path.split('/')[1];
+        };
 
         $urlRouterProvider.rule(function ($injector, $location) {
             var $sniffer = $injector.get('$sniffer'),
@@ -34,7 +38,7 @@ angular.module('Bastion.routing', ['ui.router']);
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $window = $injector.get('$window'),
                 $state = $injector.get('$state'),
-                rootPath = $location.path().split('/')[1],
+                rootPath = getRootPath($location.path(),
                 url = $location.absUrl(),
                 foundParentState;
 
@@ -47,12 +51,15 @@ angular.module('Bastion.routing', ['ui.router']);
             if (rootPath) {
                 rootPath = rootPath.replace('_', '-');
                 foundParentState = _.find($state.get(), function (state) {
-                    console.log(state.url);
+                    var found = false;
+
                     if (state.url) {
-                        console.log(state.url.replace('/', ''));
+                        console.log(getRootPath(state.url));
+                        console.log(rootPath);
+                        found = getRootPath(state.url) === rootPath;
                     }
-                    console.log(rootPath);
-                    return state.url && state.url.replace('/', '') === rootPath;
+
+                    return found;
                 });
             }
 
