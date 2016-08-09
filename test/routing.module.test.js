@@ -55,7 +55,7 @@ describe('config: Bastion.routing', function () {
             });
 
             it("redirecting to a 404 page if the parent state is found", function () {
-                spyOn($state, 'get').and.returnValue([{url: 'found-state'}]);
+                spyOn($state, 'get').and.returnValue([{url: '/found-state'}]);
                 goTo('/found_state/does_not_exist');
                 expect($window.location.href).toBe('/404');
             });
