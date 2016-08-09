@@ -38,7 +38,7 @@ angular.module('Bastion.routing', ['ui.router']);
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $window = $injector.get('$window'),
                 $state = $injector.get('$state'),
-                rootPath = getRootPath($location.path(),
+                rootPath = getRootPath($location.path()),
                 url = $location.absUrl(),
                 foundParentState;
 
