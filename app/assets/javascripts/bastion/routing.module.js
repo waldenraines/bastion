@@ -47,6 +47,9 @@ angular.module('Bastion.routing', ['ui.router']);
             if (rootPath) {
                 rootPath = rootPath.replace('_', '-');
                 foundParentState = _.find($state.get(), function (state) {
+                    console.log(state.url);
+                    console.log(state.url.replace('/', ''));
+                    console.log(rootPath);
                     return state.url && state.url.replace('/', '') === rootPath;
                 });
             }
