@@ -44,7 +44,7 @@ describe('config: Bastion.routing', function () {
         });
 
         it('removes the old browser compatibility path', function () {
-            spyOn($location, 'absUrl').and.returnValue('http://server/bastion#/some-state');
+            spyOn($location, 'absUrl').andReturn('http://server/bastion#/some-state');
             goTo('/some-state');
             expect($window.location.href).toBe('http://server/some-state');
         });
@@ -55,8 +55,8 @@ describe('config: Bastion.routing', function () {
             });
 
             it("redirecting to a 404 page if the parent state is found", function () {
-                spyOn($state, 'get').and.returnValue([{url: '/found-state'}]);
-                spyOn($state, 'href').and.returnValue('/found-state');
+                spyOn($state, 'get').andReturn([{url: '/found-state'}]);
+                spyOn($state, 'href').andReturn('/found-state');
                 spyOn($state, 'go');
 
                 goTo('/found_state/does_not_exist');
