@@ -40,7 +40,6 @@ angular.module('Bastion.components').factory('Nutupane',
                 return $location.path().split('/').join('-').slice(1);
             }
 
-            params = TableCache.getTable(getTableName()).params;
             params = params || {};
 
             self.searchKey = action ? action + 'Search' : 'search';
@@ -62,6 +61,7 @@ angular.module('Bastion.components').factory('Nutupane',
 
             self.load = function (replace) {
                 var deferred = $q.defer(),
+                    existingTable = TableCache.getTable(getTableName()),
                     table = self.table;
 
                 replace = replace || false;
@@ -73,9 +73,13 @@ angular.module('Bastion.components').factory('Nutupane',
                     table.searchCompleted = false;
                 }
 
-                params.page = table.resource.page + 1;
-                params.search = table.searchTerm || "";
-                params.search = self.searchTransform(params.search);
+                if (existingTable) {
+                    params = existingTable.params;
+                } else {
+                    params.page = table.resource.page + 1;
+                    params.search = table.searchTerm || "";
+                    params.search = self.searchTransform(params.search);
+                }
 
                 resource[table.action](params, function (response) {
 
