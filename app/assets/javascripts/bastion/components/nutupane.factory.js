@@ -33,12 +33,14 @@
 angular.module('Bastion.components').factory('Nutupane',
     ['$location', '$q', '$timeout', '$rootScope', 'TableCache', 'GlobalNotification', function ($location, $q, $timeout, $rootScope, TableCache, GlobalNotification) {
         var Nutupane = function (resource, params, action) {
-            var self = this,
+            var self = this, existingTable,
                 orgSwitcherRegex = new RegExp("/(organizations|locations)/(.+/)*(select|clear)");
 
             function getTableName() {
                 return $location.path().split('/').join('-').slice(1);
             }
+
+            existingTable = TableCache.getTable(getTableName());
 
             params = params || {};
 
@@ -54,14 +56,18 @@ angular.module('Bastion.components').factory('Nutupane',
             };
 
             // Set default resource values
-            resource.page = 0;
+            if (existingTable) {
+                resource.page = existingTable.params.page;
+            } else {
+                resource.page = 0;
+            }
+
             resource.subtotal = "0";
             resource.total = "0";
             resource.results = [];
 
             self.load = function (replace) {
                 var deferred = $q.defer(),
-                    existingTable = TableCache.getTable(getTableName()),
                     table = self.table;
 
                 replace = replace || false;
@@ -73,19 +79,19 @@ angular.module('Bastion.components').factory('Nutupane',
                     table.searchCompleted = false;
                 }
 
+                console.log(params);
+                console.log(existingTable.params);
+
                 if (existingTable) {
-                    console.log(params);
-                    console.log(existingTable.params);
                     params = existingTable.params;
-                    //params.page = existingTable.params.page + 1;
-                    
                     table.searchTerm = existingTable.searchTerm;
                     table.sortBy = existingTable.sortBy;
                 } else {
-                    params.page = table.resource.page + 1;
                     params.search = table.searchTerm || "";
                     params.search = self.searchTransform(params.search);
                 }
+
+                params.page = table.resource.page + 1;
 
                 resource[table.action](params, function (response) {
 
