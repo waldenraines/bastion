@@ -110,7 +110,6 @@ angular.module('Bastion.components').factory('Nutupane',
                     } else {
                         table.rows = table.rows.concat(response.results);
                     }
-                    table.resource.page = parseInt(response.page, 10);
 
                     if (table.initialSelectAll) {
                         table.selectAll(true);
@@ -129,7 +128,7 @@ angular.module('Bastion.components').factory('Nutupane',
                     TableCache.setTable(getTableName(), table);
                     $rootScope.$emit('nutupane:loaded');
 
-                    setQueryStrings();
+                    setQueryStrings(params);
 
                     table.working = false;
                     table.refreshing = false;
