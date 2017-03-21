@@ -285,7 +285,6 @@ angular.module('Bastion.components').factory('Nutupane',
                 self.table.searchTerm = searchTerm;
                 self.table.resource.page = 1;
                 self.table.rows = [];
-                self.table.closeItem();
                 self.table.selectAllResults(false);
 
                 if (!self.table.working) {
