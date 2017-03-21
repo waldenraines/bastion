@@ -33,11 +33,17 @@
 angular.module('Bastion.components').factory('Nutupane',
     ['$location', '$q', '$timeout', '$rootScope', 'TableCache', 'GlobalNotification', function ($location, $q, $timeout, $rootScope, TableCache, GlobalNotification) {
         var Nutupane = function (resource, params, action) {
-            var self = this, existingTable,
-                orgSwitcherRegex = new RegExp("/(organizations|locations)/(.+/)*(select|clear)");
+            var self = this, existingTable;
 
             function getTableName() {
                 return $location.path().split('/').join('-').slice(1);
+            }
+
+            function setQueryStrings(params) {
+                $location.search(self.searchKey, params.search);
+                $location.search("page", params.page);
+                $location.search("sortBy", params['sort_by']);
+                $location.search("sortOrder", params['sort_order']);
             }
 
             existingTable = TableCache.getTable(getTableName());
@@ -57,7 +63,6 @@ angular.module('Bastion.components').factory('Nutupane',
 
             // Set default resource values
             if (existingTable) {
-                console.log(existingTable.params);
                 resource.page = existingTable.params.page;
             } else {
                 resource.page = 0;
@@ -81,19 +86,13 @@ angular.module('Bastion.components').factory('Nutupane',
                 }
 
                 if (existingTable) {
-                    console.log("Existing table found");
-                    console.log(existingTable.params);
-
                     params = existingTable.params;
                     table.searchTerm = existingTable.searchTerm;
-                    table.sortBy = existingTable.sortBy;
                 } else {
-                    console.log("no existing table");
-                    console.log(params);
                     params.search = table.searchTerm || "";
-                    params.search = self.searchTransform(params.search);
                 }
 
+                params.search = self.searchTransform(params.search);
                 params.page = table.resource.page + 1;
 
                 resource[table.action](params, function (response) {
@@ -129,6 +128,8 @@ angular.module('Bastion.components').factory('Nutupane',
 
                     TableCache.setTable(getTableName(), table);
                     $rootScope.$emit('nutupane:loaded');
+
+                    setQueryStrings();
 
                     table.working = false;
                     table.refreshing = false;
@@ -304,13 +305,6 @@ angular.module('Bastion.components').factory('Nutupane',
                 self.table.searchCompleted = true;
             };
 
-            // Must be overridden
-            self.table.closeItem = function () {
-                if (!self.masterOnly) {
-                    throw "Nutupane closeItem not implemented. If you are using Nutupane functionality with master-detail please pass 'masterOnly' to your Nutupane declaration";
-                }
-            };
-
             self.table.replaceRow = function (row) {
                 var index, selected;
                 index = null;
@@ -406,12 +400,6 @@ angular.module('Bastion.components').factory('Nutupane',
                 self.searchKey = newKey;
                 self.table.searchTerm = $location.search()[self.searchKey];
             };
-
-            $rootScope.$on('$locationChangeStart', function (event, newUrl) {
-                if (newUrl.match(orgSwitcherRegex)) {
-                    self.table.closeItem();
-                }
-            });
         };
         return Nutupane;
     }]
