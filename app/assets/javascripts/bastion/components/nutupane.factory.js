@@ -63,7 +63,7 @@ angular.module('Bastion.components').factory('Nutupane',
             }
 
             console.log(resource);
-            console.log(table.resource);
+            console.log(self.table.resource);
             resource.subtotal = "0";
             resource.total = "0";
             resource.results = [];
