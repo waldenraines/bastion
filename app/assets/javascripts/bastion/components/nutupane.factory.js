@@ -57,13 +57,12 @@ angular.module('Bastion.components').factory('Nutupane',
 
             // Set default resource values
             if (existingTable) {
+                console.log(existingTable.params);
                 resource.page = existingTable.params.page;
             } else {
                 resource.page = 0;
             }
 
-            console.log(resource);
-            console.log(self.table.resource);
             resource.subtotal = "0";
             resource.total = "0";
             resource.results = [];
