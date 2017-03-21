@@ -119,21 +119,18 @@ angular.module('Bastion.components').factory('Nutupane',
                         table.initialSelectAll = false;
                     }
 
-                    // This $timeout is necessary to cause a digest cycle
-                    // in order to prevent loading two sets of results.
-                    $timeout(function () {
-                        deferred.resolve(response);
-                        table.resource = response;
-                        table.resource.page = parseInt(response.page, 10);
+                    deferred.resolve(response);
+                    table.resource = response;
+                    table.resource.page = parseInt(response.page, 10);
 
-                        if (self.selectAllMode) {
-                            table.selectAll(true);
-                        }
-                        table.resource.offset = table.rows.length;
+                    if (self.selectAllMode) {
+                        table.selectAll(true);
+                    }
+                    table.resource.offset = table.rows.length;
 
-                        TableCache.setTable(getTableName(), table);
-                        $rootScope.$emit('nutupane:loaded');
-                    }, 0);
+                    TableCache.setTable(getTableName(), table);
+                    $rootScope.$emit('nutupane:loaded');
+
                     table.working = false;
                     table.refreshing = false;
                 });
