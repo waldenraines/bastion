@@ -96,7 +96,7 @@ angular.module('Bastion.components').factory('Nutupane',
 
                 params.search = self.searchTransform(params.search);
 
-                console.log(table.resource);
+                console.log(table.resource.page);
                 params.page = table.resource.page + 1;
                 console.log(params);
 
