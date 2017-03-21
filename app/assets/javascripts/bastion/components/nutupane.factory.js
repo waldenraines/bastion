@@ -62,6 +62,8 @@ angular.module('Bastion.components').factory('Nutupane',
                 resource.page = 0;
             }
 
+            console.log(resource);
+            console.log(table.resource);
             resource.subtotal = "0";
             resource.total = "0";
             resource.results = [];
@@ -79,15 +81,16 @@ angular.module('Bastion.components').factory('Nutupane',
                     table.searchCompleted = false;
                 }
 
-                console.log(params);
-
                 if (existingTable) {
+                    console.log("Existing table found");
                     console.log(existingTable.params);
 
                     params = existingTable.params;
                     table.searchTerm = existingTable.searchTerm;
                     table.sortBy = existingTable.sortBy;
                 } else {
+                    console.log("no existing table");
+                    console.log(params);
                     params.search = table.searchTerm || "";
                     params.search = self.searchTransform(params.search);
                 }
