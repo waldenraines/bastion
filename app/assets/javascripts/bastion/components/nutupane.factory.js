@@ -62,15 +62,16 @@ angular.module('Bastion.components').factory('Nutupane',
             };
 
             // Set default resource values
-            if (existingTable) {
-                resource.page = existingTable.params.page;
-            } else {
-                resource.page = 0;
-            }
-
             resource.subtotal = "0";
             resource.total = "0";
             resource.results = [];
+
+            if (existingTable) {
+                resource.page = existingTable.params.page;
+            } else {
+                console.log($location.search("page"))
+                resource.page = $location.search("page") || 0;
+            }
 
             self.load = function (replace) {
                 var deferred = $q.defer(),
