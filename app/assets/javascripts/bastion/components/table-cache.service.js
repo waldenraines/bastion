@@ -11,7 +11,8 @@
         var cache = $cacheFactory('bst-table');
 
         this.setTable = function (tableName, table) {
-            cache.put(tableName, table);
+            console.log(table);
+            //cache.put(tableName, table);
         };
 
         this.removeTable = function (tableName) {
