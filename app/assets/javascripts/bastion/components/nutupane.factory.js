@@ -40,11 +40,12 @@ angular.module('Bastion.components').factory('Nutupane',
                 return $location.path().split('/').join('-').slice(1);
             }
 
+            params = TableCache.getTable(getTableName()).params;
             params = params || {};
 
             self.searchKey = action ? action + 'Search' : 'search';
 
-            self.table = TableCache.getTable(getTableName()) || {
+            self.table = {
                 action: action || 'queryPaged',
                 params: params,
                 resource: resource,
