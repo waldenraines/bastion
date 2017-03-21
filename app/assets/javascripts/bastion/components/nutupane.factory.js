@@ -80,9 +80,10 @@ angular.module('Bastion.components').factory('Nutupane',
                 }
 
                 console.log(params);
-                console.log(existingTable.params);
 
                 if (existingTable) {
+                    console.log(existingTable.params);
+
                     params = existingTable.params;
                     table.searchTerm = existingTable.searchTerm;
                     table.sortBy = existingTable.sortBy;
