@@ -73,6 +73,7 @@ angular.module('Bastion.components').factory('Nutupane',
                     table.searchCompleted = false;
                 }
 
+                console.log(existingTable);
                 if (existingTable) {
                     params = existingTable.params;
                 } else {
